@@ -1,0 +1,36 @@
+<div *ngIf="!isLoading">
+    <div style="width: 50%; margin: auto;">
+        <div>
+            <p style="text-align: center; padding: 20px; font-size: 20px;">Create a New Task</p>
+        </div>
+        <div>
+            <form [formGroup]="taskForm" (ngSubmit)="save()">
+
+
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input formControlName="name" matInput>
+                </mat-form-field>
+                <mat-form-field *ngIf="task">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status">
+                        <mat-option *ngFor="let key of keys" [value]="+key">
+                            {{enumMapping[+key] }}
+
+
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Priority</mat-label>
+                    <input formControlName="priority" matInput>
+                </mat-form-field>
+                <div>
+                    <button class="button-submit" mat-raised-button>Submit</button>
+                    <button class="button-cancel" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,21 @@
+.app-task-item {
+
+    form {
+        margin: 20px;
+
+        .button-submit {
+            float: left;
+        }
+
+        .button-cancel {
+            float: right;
+        }
+    }
+
+    .mat-mdc-form-field {
+        margin: auto;
+        display: block;
+        text-align: left;
+
+    }
+}
